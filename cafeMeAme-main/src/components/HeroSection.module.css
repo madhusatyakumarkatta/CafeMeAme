@@ -273,9 +273,9 @@
     margin-right: 10%;
   }
   .cup3 {
-    align-self: flex-start;
+    align-self: center;
     margin-top: -2rem;
-    margin-left: 20%;
+    margin-left: 0;
   }
   .cup4 {
     align-self: flex-end;
@@ -338,7 +338,8 @@
     width: 80%;
   }
   .cup3 {
-    width: 120%;
+    width: 100%;
+    max-width: 300px;
     margin-top: -110px;
   }
   .backgroundTextContainer {

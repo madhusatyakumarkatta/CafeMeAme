@@ -70,7 +70,7 @@
     position: relative;
     width: 100%;
     max-width: 1100px;
-    height: 900px;
+    min-height: 900px;
     margin: 20px auto 40px;
 }
 
@@ -273,12 +273,18 @@
     }
 }
 @media (max-width: 768px) {
+    .motion-card__cards-area {
+        min-height: 120vw;
+    }
     .motion-card__card {
         width: 35vw;
         height: 46vw;
     }
 }
 @media (max-width: 480px) {
+    .motion-card__cards-area {
+        min-height: 180vw;
+    }
     .motion-card__card {
         width: 55vw;
         height: 73vw;
