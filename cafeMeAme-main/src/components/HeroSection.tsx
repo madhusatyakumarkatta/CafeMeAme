@@ -147,19 +147,6 @@ export default function HeroSection() {
       {/* Main Hero Content */}
       <div className={styles.content}>
 
-        <h2 className={styles.title}>
-          Rich & Aromatic<br />Specialty Coffee
-        </h2>
-        <a
-          href="#menu"
-          className={styles.cta}
-          onClick={(e) => {
-            e.preventDefault();
-            document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          Explore Menu
-        </a>
       </div>
     </section>
   );
