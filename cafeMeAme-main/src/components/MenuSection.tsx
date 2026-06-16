@@ -50,7 +50,7 @@ export default function MenuSection() {
           <div className={styles.receiptPaper}>
             <div className={styles.receiptHeader}>
               <h2 className={styles.receiptTitle}>CAFE MeAme</h2>
-              <p className={styles.receiptSubtitle}>Order #001 &bull; {new Date().toLocaleDateString()}</p>
+              <p className={styles.receiptSubtitle} suppressHydrationWarning>Order #001 &bull; {new Date().toLocaleDateString()}</p>
               <div className={styles.receiptDivider}></div>
             </div>
 
