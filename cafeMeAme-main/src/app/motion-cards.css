@@ -8,6 +8,18 @@
     z-index: 1;
 }
 
+@media (max-width: 768px) {
+    .motion-card-section {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .motion-card-section {
+        padding: 40px 10px;
+    }
+}
+
 /* ─── Part 1: Heading ────────────────────────────────────────────────────── */
 .motion-card__heading {
     max-width: 900px;
@@ -17,10 +29,10 @@
 
 .motion-card__title {
     font-family: 'Epilogue', sans-serif;
-    font-size: clamp(3rem, 10vw, 7rem);
+    font-size: clamp(2.5rem, 10vw, 7rem);
     font-weight: 750;
     line-height: 0.9;
-    letter-spacing: -5px;
+    letter-spacing: -3px;
     color: var(--color-dark);
     margin-bottom: 0;
     cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
@@ -30,13 +42,13 @@
     font-family: 'Times New Roman', 'Georgia', serif;
     font-style: italic;
     font-weight: 400;
-    font-size: clamp(3.2rem, 11vw, 7.5rem);
+    font-size: clamp(2.8rem, 11vw, 7.5rem);
     line-height: 1.15;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     color: var(--color-dark);
     position: relative;
     display: inline-block;
-    top: -30px;
+    top: -20px;
 }
 
 /* SVG sticker placeholder (top-right of subtitle) */
@@ -279,14 +291,26 @@
     .motion-card__card {
         width: 35vw;
         height: 46vw;
+        margin-right: -10vw;
+    }
+    .motion-card__card--1,
+    .motion-card__card--2,
+    .motion-card__card--3,
+    .motion-card__card--4,
+    .motion-card__card--5,
+    .motion-card__card--6,
+    .motion-card__card--7,
+    .motion-card__card--8 {
+        left: 0;
     }
 }
 @media (max-width: 480px) {
     .motion-card__cards-area {
-        height: 180vw;
+        height: 140vw;
     }
     .motion-card__card {
-        width: 55vw;
-        height: 73vw;
+        width: 45vw;
+        height: 60vw;
+        margin-right: -25vw;
     }
 }

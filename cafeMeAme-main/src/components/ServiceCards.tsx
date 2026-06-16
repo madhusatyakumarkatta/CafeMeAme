@@ -141,7 +141,7 @@ export default function ServiceCards() {
     }, []);
 
     return (
-        <div className="service-cards-wrapper w-full bg-transparent text-[#fdf6e3] overflow-hidden relative" style={{ padding: '80px 0', fontFamily: 'Epilogue, sans-serif' }}>
+        <div className="service-cards-wrapper w-full bg-transparent text-[#fdf6e3] overflow-hidden relative py-12 md:py-[80px]" style={{ fontFamily: 'Epilogue, sans-serif' }}>
             {/* Inline SVG definitions for the symbols */}
             <svg xmlns="http://www.w3.org/2000/svg" style={{ display: 'none' }} aria-hidden="true">
                 <symbol id="bullet-icon" viewBox="0 0 13 16">
@@ -157,9 +157,9 @@ export default function ServiceCards() {
             </svg>
 
             {/* ─── Heading ─── */}
-            <div className="title-container text-center mb-[50px]">
-                <h2 className="main-title text-[4rem] font-extrabold tracking-[-2px] inline-block relative z-10" style={{ letterSpacing: '-2px' }}>explore what we <span className="italic-text font-serif italic font-medium ml-2">offer:</span></h2>
-                <svg xmlns="http://www.w3.org/2000/svg" width="160" viewBox="0 0 159 17" fill="none" className="title-underline-svg absolute bottom-[-10px] right-0 z-0 text-[#f55a3b]" style={{ strokeDashoffset: '200', strokeDasharray: '200' }}>
+            <div className="title-container text-center mb-[30px] md:mb-[50px] px-4">
+                <h2 className="main-title text-5xl md:text-[4rem] font-extrabold tracking-[-1px] md:tracking-[-2px] inline-block relative z-10">explore what we <br className="md:hidden" /><span className="italic-text font-serif italic font-medium ml-2">offer:</span></h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="160" viewBox="0 0 159 17" fill="none" className="title-underline-svg absolute bottom-[-10px] right-1/2 translate-x-1/2 md:translate-x-0 md:right-0 z-0 text-[#f55a3b]" style={{ strokeDashoffset: '200', strokeDasharray: '200' }}>
                     <path d="M1 12.1515C53.0771 5.7187 105.529 2.30552 158 1.93652" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                     <path d="M30.2672 15.9461C64.1899 12.8158 98.2663 11.3583 132.33 11.5735" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                 </svg>
@@ -178,13 +178,13 @@ export default function ServiceCards() {
                                 aria-hidden="true"
                             />
                         </div>
-                        <h3 className="card-title text-[2.2rem] font-extrabold leading-none mt-[30px] tracking-[-1px]">{card.title}</h3>
-                        <svg width="100%" height="10" className="card-divider-svg my-4" aria-hidden="true">
+                        <h3 className="card-title text-[1.8rem] md:text-[2.2rem] font-extrabold leading-none mt-[20px] md:mt-[30px] tracking-[-1px]">{card.title}</h3>
+                        <svg width="100%" height="10" className="card-divider-svg my-3 md:my-4" aria-hidden="true">
                             <use href="#card-divider" />
                         </svg>
-                        <ul className="card-list list-none font-medium text-[1.15rem]">
+                        <ul className="card-list list-none font-medium text-[1rem] md:text-[1.15rem]">
                             {card.services.map((service) => (
-                                <li key={service} className="mb-2 flex items-start gap-3 leading-[1.3] tracking-[-0.3px]">
+                                <li key={service} className="mb-2 flex items-start gap-2 md:gap-3 leading-[1.3] tracking-[-0.3px]">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="16" className="services-card__bullet-svg w-[14px] h-[18px] shrink-0 mt-[2px] text-current" aria-hidden="true">
                                         <use href="#bullet-icon" />
                                     </svg>
