@@ -293,14 +293,22 @@ html.lenis {
 @media (max-width: 768px) {
     .cards-wrapper {
         position: relative !important;
-        display: block !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px !important;
         width: 100% !important;
+        height: auto !important;
         margin: 0 auto !important;
         overflow: visible !important;
     }
 
     .card {
-        width: 82vw;
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: 90vw;
         max-width: 340px;
         min-height: 420px;
         height: auto;

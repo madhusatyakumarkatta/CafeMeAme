@@ -93,46 +93,22 @@ export default function ServiceCards() {
                 });
             });
         } else {
-            // Mobile: Stacked card scroll reveal
-            const cardsWrapper = document.querySelector('.cards-wrapper') as HTMLElement;
-            const scrollPerCard = window.innerHeight * 0.8;
-            const navH = 60;
-            const mobileRotations = [-6, 4, -8, 5, -3];
-
+            // Mobile: Standard vertical scroll reveal
             cards.forEach((card, i) => {
-                gsap.set(card, {
-                    position: 'absolute', left: '50%', top: '0', xPercent: -50,
-                    y: i === 0 ? 0 : window.innerHeight * 1.1,
-                    rotation: mobileRotations[i % mobileRotations.length],
-                    zIndex: i + 1,
-                    transformOrigin: 'center center'
-                });
-            });
-
-            const wrapperH = window.innerHeight * 0.7 + scrollPerCard * (cards.length - 1);
-            gsap.set(cardsWrapper, { height: wrapperH });
-
-            ScrollTrigger.create({
-                trigger: cardsWrapper,
-                start: `top ${navH}px`,
-                end: `+=${scrollPerCard * (cards.length - 1)}`,
-                pin: true,
-                pinSpacing: true,
-                id: 'mobile-cards-pin'
-            });
-
-            cards.forEach((card, i) => {
-                if (i === 0) return;
+                // Ensure GSAP doesn't override the flexbox CSS
+                gsap.set(card, { clearProps: 'position,left,top,transform,xPercent' });
+                
                 gsap.fromTo(card,
-                    { y: window.innerHeight * 1.1 },
+                    { opacity: 0, y: 50 },
                     {
+                        opacity: 1,
                         y: 0,
+                        duration: 0.8,
                         ease: 'power3.out',
                         scrollTrigger: {
-                            trigger: cardsWrapper,
-                            start: `top+=${(i - 1) * scrollPerCard} ${navH}px`,
-                            end: `top+=${i * scrollPerCard} ${navH}px`,
-                            scrub: 0.4
+                            trigger: card,
+                            start: 'top 85%',
+                            toggleActions: 'play none none reverse'
                         }
                     }
                 );
