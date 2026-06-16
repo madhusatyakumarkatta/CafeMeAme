@@ -1,0 +1,201 @@
+.menuSection {
+  padding: 8rem 2rem;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.receiptsContainer {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1600px;
+  position: relative;
+  z-index: 2;
+}
+
+.leftColumnWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  flex: 1;
+  max-width: 700px;
+  align-items: center;
+}
+
+.receiptPaper {
+  position: relative;
+  background: #fcf9f2; /* off-white paper color */
+  color: #1a1a1a; /* dark ink */
+  width: 100%;
+  flex: 1;
+  max-width: 700px;
+  padding: 4rem 3rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Jagged edges */
+.receiptPaper::before,
+.receiptPaper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background-size: 24px 24px;
+}
+
+.receiptPaper::before {
+  top: -12px;
+  background-image: 
+    linear-gradient(-45deg, #fcf9f2 12px, transparent 0),
+    linear-gradient(45deg, #fcf9f2 12px, transparent 0);
+  background-position: left top;
+}
+
+.receiptPaper::after {
+  bottom: -12px;
+  background-image: 
+    linear-gradient(135deg, #fcf9f2 12px, transparent 0),
+    linear-gradient(-135deg, #fcf9f2 12px, transparent 0);
+  background-position: left bottom;
+}
+
+/* Typography */
+.receiptHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.receiptTitle {
+  font-family: var(--font-bebas-neue);
+  font-size: 4rem;
+  letter-spacing: 4px;
+  margin: 0;
+  line-height: 1;
+  color: #111;
+}
+
+.receiptSubtitle {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  color: #444;
+  text-transform: uppercase;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.receiptDivider {
+  border-top: 2px dashed #444;
+  margin: 2rem 0;
+}
+
+.receiptBody {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.categoryBlock {
+  /* No more glassmorphic background */
+}
+
+.categoryTitle {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+  color: #111;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  will-change: transform, opacity;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.itemRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.itemName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.itemDots {
+  flex-grow: 1;
+  border-bottom: 2px dotted #888;
+  margin: 0 10px;
+  opacity: 0.6;
+  position: relative;
+  top: -6px;
+}
+
+.itemPrice {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.itemDescription {
+  margin: 0.4rem 0 0 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.receiptFooter {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 4rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+@media (max-width: 1024px) {
+  .receiptsContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .menuSection {
+    padding: 4rem 1rem;
+  }
+  
+  .receiptPaper {
+    padding: 3rem 1.5rem;
+  }
+  
+  .receiptTitle {
+    font-size: 3rem;
+  }
+  
+  .itemName, .itemPrice {
+    font-size: 1rem;
+  }
+}

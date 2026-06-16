@@ -1,0 +1,79 @@
+.aboutSection {
+  color: #fdf6e3;
+  z-index: 1;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2rem 8rem;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.lineWrapper {
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0.75rem, 3vw, 2rem);
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.line {
+  font-size: clamp(2.5rem, 8vw, 9rem);
+  font-weight: 900;
+  line-height: 1.1;
+  font-family: var(--font-bebas-neue);
+  letter-spacing: 0.05em;
+  margin: 0;
+  text-align: center;
+}
+
+.imageBox1, .imageBox2 {
+  background-position: 50% 40%;
+  background-size: cover;
+  border-radius: 100px;
+  width: clamp(120px, 20vw, 310px);
+  height: clamp(45px, 7vw, 100px);
+  flex-shrink: 0;
+}
+
+.imageBox1 {
+  background-image: url(/coffee1.jpg);
+}
+
+.imageBox2 {
+  background-image: url(/coffee2.jpg);
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    min-height: auto;
+    padding: 2rem 1rem 6rem;
+  }
+  .content {
+    gap: 1.5rem;
+  }
+  .lineWrapper {
+    gap: 0.5rem;
+  }
+  .line {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+  .imageBox1, .imageBox2 {
+    border-radius: 50px;
+    width: clamp(100px, 25vw, 150px);
+    height: clamp(40px, 10vw, 60px);
+  }
+}

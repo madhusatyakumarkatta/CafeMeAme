@@ -1,0 +1,149 @@
+.loadingContainer {
+  z-index: 9999;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.loadingImage {
+  will-change: transform;
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  transform: scale(1.06);
+}
+
+@media (max-width: 768px) {
+  .loadingImage {
+    width: 100vw;
+    height: 51.3vh;
+    top: auto;
+    left: 0;
+  }
+}
+
+.loadingImage img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.loadingLeft {
+  left: 0;
+}
+
+.loadingRight {
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .loadingLeft {
+    inset: 0 auto auto 0;
+  }
+  .loadingRight {
+    inset: auto auto 0 0;
+  }
+}
+
+.piece {
+  will-change: transform;
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  transform: scale(0);
+}
+
+.piece img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.piece1 {
+  top: 25%;
+  left: 50%;
+}
+
+.piece2 {
+  filter: blur(2px);
+  top: 50%;
+  left: 50%;
+}
+
+.piece3 {
+  top: 72%;
+  left: 50%;
+}
+
+.piece4 {
+  top: 35%;
+  left: 50%;
+}
+
+.piece5 {
+  filter: blur(2px);
+  top: 63%;
+  left: 50%;
+}
+
+.piece6 {
+  top: 42%;
+  left: 50%;
+}
+
+.piece7 {
+  filter: blur(2px);
+  top: 55%;
+  left: 50%;
+}
+
+.piece8 {
+  top: 68%;
+  left: 50%;
+}
+
+@media (max-width: 768px) {
+  .piece {
+    width: 28px;
+    height: 28px;
+  }
+  .piece1 {
+    top: 25%;
+    left: 15%;
+  }
+  .piece2 {
+    top: 65%;
+    left: 8%;
+  }
+  .piece3 {
+    top: 35%;
+    left: 75%;
+  }
+  .piece4 {
+    top: 70%;
+    left: 85%;
+  }
+  .piece5 {
+    top: 20%;
+    left: 45%;
+  }
+  .piece6 {
+    top: 75%;
+    left: 55%;
+  }
+  .piece7 {
+    top: 40%;
+    left: 92%;
+  }
+  .piece8 {
+    top: 60%;
+    left: 30%;
+  }
+}

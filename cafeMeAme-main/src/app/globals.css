@@ -1,0 +1,331 @@
+@import "tailwindcss";
+
+:root {
+  --background: #216C85; /* Teal Blue */
+  --foreground: #f8f8f8; /* Light foreground for contrast */
+  --gold: #e76b25; /* Caffinity accent orange */
+  --gold-hover: #d25a17;
+  --bronze: #b6744a; /* Caffinity middle brown */
+  --cacao-light: #ffffff;
+  --cacao-medium: #f5e9d5; /* Caffinity about background */
+  --cacao-dark: #f3e7d3;
+  --glass-bg: rgba(255, 252, 247, 0.7);
+  --glass-border: rgba(76, 32, 4, 0.1);
+  --glass-glow: rgba(231, 107, 37, 0.05);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gold: var(--gold);
+  --color-gold-hover: var(--gold-hover);
+  --color-bronze: var(--bronze);
+  --color-cacao-light: var(--cacao-light);
+  --color-cacao-medium: var(--cacao-medium);
+  --color-cacao-dark: var(--cacao-dark);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --color-glass-glow: var(--glass-glow);
+  
+  --font-serif: var(--font-serif), serif;
+  --font-sans: var(--font-sans), sans-serif;
+  --font-bebas-neue: var(--font-bebas-neue), sans-serif;
+  --font-calligraphy: var(--font-great-vibes), cursive;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+  }
+}
+
+html, body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+/* Custom scrollbar matching the dark luxury theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cacao-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bronze);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(212, 175, 55, 0.08), 0 0 0 1px rgba(212, 175, 55, 0.1) inset;
+  transform: translateY(-2px);
+}
+
+/* Lenis smooth scroll adjustments */
+html.lenis {
+  height: auto;
+}
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+.lenis-target {
+  scroll-behavior: clip;
+}
+
+/* ─── Cards Wrapper ──────────────────────────────────────────────────────── */
+.cards-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    height: 650px;
+    margin: 100px auto 100px 100px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ─── Base Card ──────────────────────────────────────────────────────────── */
+.card {
+    width: 320px;
+    height: 460px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 3.5rem 1.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: -15px 25px 50px rgba(0, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform-origin: center center;
+}
+
+/* ─── Card Color Variants ────────────────────────────────────────────────── */
+.card-green {
+    background-color: #6fb694;
+    left: calc(50% - 700px);
+    top: 50px;
+    transform: rotate(4deg);
+    z-index: 1;
+}
+
+.card-darkblue {
+    background-color: #7ab2cf;
+    color: #222;
+    left: calc(50% - 430px);
+    top: 100px;
+    transform: rotate(-5deg);
+    z-index: 2;
+}
+
+.card-orange {
+    background-color: #e57e4e;
+    color: #222;
+    left: calc(50% - 220px);
+    top: 20px;
+    transform: rotate(5deg);
+    z-index: 3;
+}
+
+.card-maroon {
+    background-color: #8c3b4a;
+    left: calc(50% + 50px);
+    top: 30px;
+    transform: rotate(-8deg);
+    z-index: 4;
+}
+
+.card-pink {
+    background-color: #df9cb5;
+    color: #222;
+    left: calc(50% + 320px);
+    top: 70px;
+    transform: rotate(5deg);
+    z-index: 5;
+}
+
+/* Expand hit area for middle cards to bridge gaps */
+.card-darkblue::after,
+.card-orange::after,
+.card-maroon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -35px;
+    right: -35px;
+}
+
+/* Light card divider overrides */
+.card-pink .card-divider-svg,
+.card-orange .card-divider-svg,
+.card-darkblue .card-divider-svg {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* ─── Card Sticker Variables ─────────────────────────────────────────────── */
+:root {
+    --sticker-camera-w: 160px;
+    --sticker-phone-w: 120px;
+    --sticker-smiley-w: 120px;
+    --sticker-hand-w: 120px;
+    --sticker-heart-w: 140px;
+
+    --sticker-camera-top: -45px;
+    --sticker-camera-left: 120px;
+
+    --sticker-phone-top: -45px;
+    --sticker-phone-left: 155px;
+
+    --sticker-smiley-top: -50px;
+
+    --sticker-hand-top: -40px;
+
+    --sticker-heart-top: -50px;
+    --sticker-heart-right: 15px;
+}
+
+/* ─── Card Stickers ──────────────────────────────────────────────────────── */
+.card-sticker {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+    filter: drop-shadow(-8px 12px 15px rgba(0, 0, 0, 0.4));
+}
+
+.card-sticker.sticker-camera {
+    width: var(--sticker-camera-w);
+    top: var(--sticker-camera-top);
+    left: var(--sticker-camera-left);
+    transform: rotate(3deg);
+}
+
+.card-sticker.sticker-phone {
+    width: var(--sticker-phone-w);
+    top: var(--sticker-phone-top);
+    left: var(--sticker-phone-left);
+    transform: rotate(1deg);
+}
+
+.card-sticker.sticker-smiley {
+    width: var(--sticker-smiley-w);
+    top: var(--sticker-smiley-top);
+    left: 70%;
+    transform: translateX(-50%) rotate(4deg);
+}
+
+.card-sticker.sticker-hand {
+    width: var(--sticker-hand-w);
+    top: var(--sticker-hand-top);
+    left: 70%;
+    transform: translateX(-50%) rotate(8deg);
+}
+
+.card-sticker.sticker-heart {
+    width: var(--sticker-heart-w);
+    top: var(--sticker-heart-top);
+    right: var(--sticker-heart-right);
+    transform: rotate(1deg);
+}
+
+/* Responsive Overrides */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .cards-wrapper {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        padding-bottom: 50px;
+        gap: 30px;
+        overflow: visible;
+    }
+
+    .card {
+        position: relative;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        min-height: 400px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-wrapper {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        overflow: visible !important;
+    }
+
+    .card {
+        width: 82vw;
+        max-width: 340px;
+        min-height: 420px;
+        height: auto;
+    }
+
+    .card-sticker {
+        pointer-events: none;
+    }
+}
+
+/* ─── Custom Cursor Bubble ───────────────────────────────────────────────── */
+.cursor-bubble {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-color: var(--gold);
+    color: var(--background);
+    padding: 5px 7px 3px 7px;
+    border-radius: 50px 50px 50px 0px;
+    font-size: 18px;
+    font-family: var(--font-sans);
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: left center;
+    z-index: 10000;
+    white-space: nowrap;
+}
