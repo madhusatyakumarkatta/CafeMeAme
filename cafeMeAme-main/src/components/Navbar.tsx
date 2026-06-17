@@ -46,8 +46,8 @@ export default function Navbar() {
               style={{ width: "45px", height: "auto" }}
               className="object-contain group-hover:rotate-12 transition-transform duration-300"
             />
-            <span className="font-calligraphy text-4xl tracking-wide text-foreground group-hover:text-gold transition-colors duration-300">
-              Cafe MeAme
+            <span className="font-sans font-semibold text-2xl tracking-wide text-foreground group-hover:text-gold transition-colors duration-300">
+              Cafe meAme
             </span>
           </a>
 

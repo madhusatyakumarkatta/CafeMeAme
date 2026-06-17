@@ -191,7 +191,7 @@ export default function Footer() {
                 <div className="footer-bottom">
                     <div className="footer-big-text">
                         <div className="overflow-hidden">
-                            <h1 className="font-serif font-bold text-[18vw] leading-none tracking-tighter text-[#f8f8f8]">Cafe MeAme</h1>
+                            <h1 className="font-serif font-bold text-[18vw] leading-none tracking-tighter text-[#f8f8f8]">Cafe meAme</h1>
                         </div>
                     </div>
 
@@ -219,7 +219,7 @@ export default function Footer() {
 
                     {/* Bottom row: credits */}
                     <div className="footer-bottom-row">
-                        <div className="font-sans text-xs opacity-50 ml-6 pb-4">© {new Date().getFullYear()} MeAme Bakery & Cafe</div>
+                        <div className="font-sans text-xs opacity-50 ml-6 pb-4">© {new Date().getFullYear()} meAme Bakery & Cafe</div>
                         <div className="footer-credits-wrapper">
                             <div className="credits-box">
                                 <div className="credits-content">
