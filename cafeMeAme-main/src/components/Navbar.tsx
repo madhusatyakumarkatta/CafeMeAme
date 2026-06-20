@@ -46,7 +46,7 @@ export default function Navbar() {
               style={{ width: "45px", height: "auto" }}
               className="object-contain group-hover:rotate-12 transition-transform duration-300"
             />
-            <span className="font-sans font-semibold text-2xl tracking-wide text-foreground group-hover:text-gold transition-colors duration-300">
+            <span className="font-sans font-semibold text-2xl tracking-wide text-[#4A2E15] group-hover:text-gold transition-colors duration-300">
               Cafe meAme
             </span>
           </a>
@@ -57,7 +57,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="relative font-sans text-sm tracking-widest text-foreground/80 hover:text-gold uppercase transition-colors duration-300 py-2 group"
+                className="relative font-sans text-sm tracking-widest text-[#4A2E15] hover:text-gold uppercase transition-colors duration-300 py-2 group"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full" />
@@ -80,7 +80,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground hover:text-gold transition-colors"
+            className="md:hidden p-2 text-[#4A2E15] hover:text-gold transition-colors"
             aria-label="Toggle Menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -104,7 +104,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="font-serif text-3xl font-light tracking-wide text-foreground hover:text-gold transition-colors duration-300"
+                  className="font-serif text-3xl font-light tracking-wide text-[#4A2E15] hover:text-gold transition-colors duration-300"
                 >
                   {link.name}
                 </a>
@@ -125,7 +125,7 @@ export default function Navbar() {
                 href="https://www.instagram.com/meame_bakery_cafe"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/60 hover:text-gold transition-colors"
+                className="text-[#4A2E15]/80 hover:text-gold transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
